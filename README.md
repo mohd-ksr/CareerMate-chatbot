@@ -87,13 +87,20 @@ streamlit run app.py
 ## 📸 Screenshots
 
 <p align="center">
-  <img src="assets/home.png" alt="Home Page" width="400"/>
-  <img src="assets/analyzer.png" alt="Resume Analyzer" width="400"/>
+  <img src="screenshots/1.png" alt="Home Page" width="400"/>
+  <img src="screenshots/2.png" alt="Chat Assistant" width="400"/>
 </p>
 
 <p align="center">
-  <img src="assets/chat.png" alt="Chat Assistant" width="400"/>
-  <img src="assets/career.png" alt="Career Suggestions" width="400"/>
+  <img src="screenshots/3.png" alt="Career Suggestions" width="400"/>
+  <img src="screenshots/4.png" alt="Career Suggestions" width="400"/>
+</p>
+<p align="center">
+  <img src="screenshots/5.png" alt="Career Suggestions" width="400"/>
+  <img src="screenshots/6.png" alt="Flow chart" width="400"/>
+</p>
+<p align="center">
+  <img src="screenshots/7.png" alt="Resume Analyzer" width="400"/>
 </p>
 
 ---
