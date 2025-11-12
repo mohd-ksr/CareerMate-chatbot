@@ -27,12 +27,12 @@ It analyzes resumes, extracts key skills, and recommends personalized career pat
 ## 🧩 Project Structure
 
 CareerMate-chatbot/
-│
-├── app.py # Main Streamlit interface
-├── resume.py # Resume Analyzer logic
-├── assistant.py # Chatbot assistant logic
-├── requirements.txt # Project dependencies
-├── .env # Gemini API key (not uploaded)
+│<br/>
+├── app.py # Main Streamlit interface<br/>
+├── resume.py # Resume Analyzer logic<br/>
+├── assistant.py # Chatbot assistant logic<br/>
+├── requirements.txt # Project dependencies<br/>
+├── .env # Gemini API key (not uploaded)<br/>
 └── README.md # Project documentation
 
 
@@ -54,7 +54,7 @@ venv\Scripts\activate         # For Windows
 pip install -r requirements.txt
 ```
 ### 4️⃣ Add your Gemini API Key
-Create a file named .env in the project root:
+Create a file named .env in the project root:<br/>
 GEMINI_API_KEY=your-google-gemini-api-key
 
 ### 5️⃣ Run the application
@@ -90,10 +90,10 @@ streamlit run app.py
 </p>
 
 ## 💡 Future Enhancements
-📑 Downloadable PDF Report of Career Suggestions
-🧭 Interactive Career Roadmap Visualization
-🧠 Memory-based Conversational Assistant
-🌗 Dark Mode Support
+- 📑 Downloadable PDF Report of Career Suggestions
+- 🧭 Interactive Career Roadmap Visualization
+- 🧠 Memory-based Conversational Assistant
+- 🌗 Dark Mode Support
 
 ## 🧾 License
 This project is licensed under the MIT License.
