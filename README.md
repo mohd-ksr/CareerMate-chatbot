@@ -35,6 +35,7 @@ CareerMate-chatbot/
 ├── .env # Gemini API key (not uploaded)<br/>
 └── README.md # Project documentation
 
+---
 
 ## ⚙️ Installation & Setup
 
@@ -61,6 +62,8 @@ GEMINI_API_KEY=your-google-gemini-api-key
 ```bash
 streamlit run app.py
 ```
+---
+
 ## 🧠 Tech Stack
 | Category          | Tools                                 |
 | ----------------- | ------------------------------------- |
@@ -71,11 +74,15 @@ streamlit run app.py
 | **Visualization** | Graphviz                              |
 | **Language**      | Python 3.10+                          |
 
+---
+
 ## 📂 Supported File Types
 | Type    | Description                                  |
 | ------- | -------------------------------------------- |
 | `.pdf`  | Extracts readable text from standard resumes |
 | `.docx` | Parses text from Word-based resumes          |
+
+---
 
 ## 📸 Screenshots
 
@@ -89,17 +96,21 @@ streamlit run app.py
   <img src="assets/career.png" alt="Career Suggestions" width="400"/>
 </p>
 
+---
+
 ## 💡 Future Enhancements
 - 📑 Downloadable PDF Report of Career Suggestions
 - 🧭 Interactive Career Roadmap Visualization
 - 🧠 Memory-based Conversational Assistant
 - 🌗 Dark Mode Support
 
+---
+
 ## 🧾 License
 This project is licensed under the MIT License.
 Feel free to fork, modify, and enhance the project.
 
-
+---
 
 “Choose a career you love, and you will never have to work a day in your life.”
 
