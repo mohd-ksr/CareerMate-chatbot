@@ -2,6 +2,7 @@ import streamlit as st
 from streamlit_option_menu import option_menu
 from resume import resume_analyzer
 from assistant import main_app
+import base64
 
 if 'intro_shown' not in st.session_state:
     st.session_state.intro_shown = False
@@ -71,30 +72,7 @@ def show_intro():
             """, unsafe_allow_html=True)
 
     st.write("---")
-    
-    # Team row
-    st.subheader("Our Team")
-    team_cols = st.columns(3)
-    team = [
-        ("Pavan", "12305446", "ML Engineer"),
-        ("Sakshi", "12306499", "Data Scientist"),
-        ("Kausar", "12316343", "ML Engineer")
-    ]
-    
-    for idx, (name, id, role) in enumerate(team):
-        with team_cols[idx]:
-            st.markdown(f"""
-            <div style="text-align: center; margin: 1rem 0;">
-                <h4>{name}</h4>
-                <p style="color: #666; font-size: 0.85rem;">
-                    {role}<br>
-                    <code style="background: #f0f2f6;">ID: {id}</code>
-                </p>
-            </div>
-            """, unsafe_allow_html=True)
 
-    st.write("---")
-    
     # How it works
     st.subheader("How It Works")
     steps = ["1. Upload/Describe Skills", "2. Get Career Suggestions", 
@@ -108,13 +86,50 @@ def show_intro():
                 <p>{step}</p>
             </div>
             """, unsafe_allow_html=True)
+    
+    st.write("---")
+
+    # Personal Info Section
+
+    # Load image as base64
+    with open("kausar.png", "rb") as f:
+        img_data = base64.b64encode(f.read()).decode()
+
+    st.subheader("Developer")
+    st.markdown(f"""
+    <div style="text-align: center; margin: 2rem 0;">
+        <img src="data:image/jpeg;base64,{img_data}" 
+            style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; 
+                    margin-bottom: 1rem; box-shadow: 0 4px 8px rgba(0,0,0,0.2);" />
+        <p style="color: #4A90E2;">
+            <a href="https://github.com/mohd-ksr" target="_blank" style="text-decoration: none; color: #4A90E2; font-size: 2rem;">
+            Mo Kausar
+            </a>
+        </p>
+        <p style="color: #bbb; font-size: 0.9rem;">
+            Machine Learning Engineer & Developer<br>
+            <code style="background: #222; color: #7CFC00;">ID: 12316343</code>
+        </p>
+        <p style="max-width: 600px; margin: 0 auto; color: #ccc; font-size: 0.9rem;">
+            Hi, I'm <strong>Mo Kausar</strong> — an energetic and innovative 
+            <strong>B.Tech Computer Science</strong> student with a strong foundation in programming 
+            and machine learning. I’m passionate about solving real-world problems through 
+            intelligent, AI-driven solutions and love turning ideas into impactful, user-centered projects. 
+            Always eager to learn and contribute to meaningful work leveraging emerging technologies.
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
+
+
+    st.write("---")
+    
 
     if st.button("Let's Get Started ➡️", use_container_width=True):
         st.session_state.intro_shown = True
         st.rerun()
 
 def main_page():
-    st.title("Career Path Oracle 🧙‍♂️")
+    st.title("CareerMate🧙‍♂️")
 
     # Initialize session state (only once)
     if "selected_option" not in st.session_state:
@@ -132,7 +147,7 @@ def main_page():
         )
         st.write("---")
         st.subheader("About Me")
-        st.write("I'm your Career Path Oracle and Resume Analyzer! You can ask me:")
+        st.write("I'm your Career Path adviser CareerMate and Resume Analyzer! You can ask me:")
         st.write("- About myself and how I can help you")
         st.write("- For career path suggestions")
         st.write("- About job market insights")
@@ -147,12 +162,6 @@ def main_page():
         st.write("- Make 1 year roadmap for becoming MERN developer")
         
         st.write("---")
-        st.subheader("Team Members")
-        st.write("Pavan - 12305446")
-        st.write("Sakshi - 12306499")
-        st.write("Kausar - 12316343")
-
-
 
     # Show content based on selection
     if st.session_state.selected_option == "Bot Assistant":

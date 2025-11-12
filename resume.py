@@ -6,6 +6,7 @@ import numpy as np
 import os
 import time
 import re
+from io import BytesIO
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -47,21 +48,27 @@ def extract_skills(resume_text):
 
 
 # Function to read PDF file
-def read_pdf(file):
-    with open(file, "rb") as f:
-        pdf_reader = PyPDF2.PdfReader(f)
-        text = ""
-        for page in pdf_reader.pages:
-            text += page.extract_text()
+# Function to read PDF file
+def read_pdf(uploaded_file):
+    pdf_reader = PyPDF2.PdfReader(uploaded_file)
+    text = ""
+    for page in pdf_reader.pages:
+        text += page.extract_text()
     return text
 
 # Function to read DOCX file
-def read_docx(file):
-    doc = docx.Document(file)
-    text = ""
-    for para in doc.paragraphs:
-        text += para.text
-    return text
+def read_docx(uploaded_file):
+    """Reads text content from DOCX file safely."""
+    try:
+        uploaded_file.seek(0)  # reset pointer
+        doc = docx.Document(BytesIO(uploaded_file.read()))
+        text = ""
+        for para in doc.paragraphs:
+            text += para.text + "\n"
+        return text
+    except Exception as e:
+        st.error(f"Error reading DOCX file: {e}")
+        return ""
 
 # Function to get career paths based on skills using Gemini
 def get_career_paths(skills):
